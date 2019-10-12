@@ -15,12 +15,14 @@ import torchvision
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-import code.archs as archs
-from code.utils.cluster.general import config_to_str, get_opt, update_lr, nice
-from code.utils.cluster.data import cluster_twohead_create_dataloaders
-from code.utils.cluster.cluster_eval import cluster_eval, get_subhead_using_loss
-from code.utils.cluster.IID_losses import IID_loss
-from code.utils.cluster.render import save_progress
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .utils.cluster.general import config_to_str, get_opt, update_lr, nice
+from .utils.cluster.data import cluster_twohead_create_dataloaders
+from .utils.cluster.cluster_eval import cluster_eval, get_subhead_using_loss
+from .utils.cluster.IID_losses import IID_loss
+from .utils.cluster.render import save_progress
 
 """
   Fully unsupervised clustering ("IIC" = "IID").

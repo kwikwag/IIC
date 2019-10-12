@@ -4,7 +4,9 @@ import pickle
 
 import numpy as np
 
-from code.utils.segmentation.data import make_Coco_dataloaders, \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .utils.segmentation.data import make_Coco_dataloaders, \
   make_Potsdam_dataloaders
 
 parser = argparse.ArgumentParser()

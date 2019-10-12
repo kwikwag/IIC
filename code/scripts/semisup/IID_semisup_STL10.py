@@ -14,13 +14,15 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import torch.nn as nn
 
-import code.archs as archs
-from code.archs.semisup.sup_head5 import SupHead5
-from code.utils.cluster.general import update_lr
-from code.utils.cluster.transforms import sobel_process, \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .archs.semisup.sup_head5 import SupHead5
+from .utils.cluster.general import update_lr
+from .utils.cluster.transforms import sobel_process, \
   sobel_make_transforms
-from code.utils.semisup.general import get_dlen, assess_acc_block
-from code.utils.semisup.dataset import TenCropAndFinish
+from .utils.semisup.general import get_dlen, assess_acc_block
+from .utils.semisup.dataset import TenCropAndFinish
 
 
 # Finetune a network that has been trained in an unsupervised fashion but with a

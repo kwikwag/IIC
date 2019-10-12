@@ -1,7 +1,9 @@
 from torch.utils.data.dataset import Dataset
 from torchvision import transforms
 
-from code.utils.cluster.transforms import custom_greyscale_to_tensor
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .utils.cluster.transforms import custom_greyscale_to_tensor
 
 
 class TenCropAndFinish(Dataset):

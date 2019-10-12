@@ -6,7 +6,9 @@ import numpy as np
 import torch
 from PIL import Image
 
-from code.utils.cluster.cluster_eval import _get_assignment_data_matches, \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .utils.cluster.cluster_eval import _get_assignment_data_matches, \
   _clustering_get_data
 
 # for all heads/models, keep the colouring consistent

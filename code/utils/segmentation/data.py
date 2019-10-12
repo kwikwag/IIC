@@ -4,9 +4,11 @@ from datetime import datetime
 import torch
 from torch.utils.data import ConcatDataset
 
-from code.datasets.segmentation import DoerschDataset
-from code.datasets.segmentation import cocostuff
-from code.datasets.segmentation import potsdam
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .datasets.segmentation import DoerschDataset
+from .datasets.segmentation import cocostuff
+from .datasets.segmentation import potsdam
 
 
 def segmentation_create_dataloaders(config):

@@ -5,8 +5,10 @@ from datetime import datetime
 
 import torch
 
-from code.utils.cluster.cluster_eval import cluster_subheads_eval
-from code.utils.cluster.transforms import sobel_process
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .utils.cluster.cluster_eval import cluster_subheads_eval
+from .utils.cluster.transforms import sobel_process
 
 
 def segmentation_eval(config, net,

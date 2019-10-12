@@ -15,9 +15,12 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 import code.archs as archs
-from code.utils.cluster.general import config_to_str, get_opt, update_lr
-from code.utils.cluster.transforms import sobel_process
-from code.utils.cluster.baselines.triplets import make_triplets_data, \
+
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .utils.cluster.general import config_to_str, get_opt, update_lr
+from .utils.cluster.transforms import sobel_process
+from .utils.cluster.baselines.triplets import make_triplets_data, \
   triplets_eval, triplets_loss
 
 """

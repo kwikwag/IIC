@@ -5,11 +5,14 @@ import torch
 import torchvision
 from torch.utils.data import ConcatDataset
 
-from code.datasets.clustering.truncated_dataset import TruncatedDataset
-from code.utils.cluster.transforms import sobel_make_transforms, \
-  greyscale_make_transforms
-from code.utils.semisup.dataset import TenCropAndFinish
 from .general import reorder_train_deterministic
+
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .datasets.clustering.truncated_dataset import TruncatedDataset
+from .utils.cluster.transforms import sobel_make_transforms, \
+  greyscale_make_transforms
+from .utils.semisup.dataset import TenCropAndFinish
 
 
 # Used by sobel and greyscale clustering twohead scripts -----------------------

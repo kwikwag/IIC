@@ -13,14 +13,16 @@ import torch
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-import code.archs as archs
-from code.utils.cluster.general import config_to_str, get_opt, update_lr
-from code.utils.cluster.transforms import sobel_process
-from code.utils.segmentation.data import make_Coco_dataloaders, \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .utils.cluster.general import config_to_str, get_opt, update_lr
+from .utils.cluster.transforms import sobel_process
+from .utils.segmentation.data import make_Coco_dataloaders, \
   make_Potsdam_dataloaders
-from code.utils.segmentation.baselines.kmeans_segmentation_eval import \
+from .utils.segmentation.baselines.kmeans_segmentation_eval import \
   kmeans_segmentation_eval
-from code.utils.segmentation.baselines.doersch_utils import \
+from .utils.segmentation.baselines.doersch_utils import \
   doersch_set_patches, doersch_loss
 
 parser = argparse.ArgumentParser()

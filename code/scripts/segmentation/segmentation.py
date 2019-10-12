@@ -14,15 +14,17 @@ import torch
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-import code.archs as archs
-from code.utils.cluster.general import config_to_str, get_opt, update_lr, nice
-from code.utils.cluster.transforms import sobel_process
-from code.utils.segmentation.segmentation_eval import \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .utils.cluster.general import config_to_str, get_opt, update_lr, nice
+from .utils.cluster.transforms import sobel_process
+from .utils.segmentation.segmentation_eval import \
   segmentation_eval
-from code.utils.segmentation.IID_losses import IID_segmentation_loss, \
+from .utils.segmentation.IID_losses import IID_segmentation_loss, \
   IID_segmentation_loss_uncollapsed
-from code.utils.segmentation.data import segmentation_create_dataloaders
-from code.utils.segmentation.general import set_segmentation_input_channels
+from .utils.segmentation.data import segmentation_create_dataloaders
+from .utils.segmentation.general import set_segmentation_input_channels
 
 """
   Semisupervised overclustering for segmentation ("IIC+" = "IID+")

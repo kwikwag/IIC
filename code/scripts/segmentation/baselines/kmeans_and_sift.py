@@ -11,9 +11,11 @@ import torch
 import vlfeat  # calls constructor
 from sklearn.cluster import MiniBatchKMeans
 
-from code.utils.cluster.eval_metrics import _hungarian_match, _original_match, \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .utils.cluster.eval_metrics import _hungarian_match, _original_match, \
   _acc
-from code.utils.segmentation.data import make_Coco_dataloaders, \
+from .utils.segmentation.data import make_Coco_dataloaders, \
   make_Potsdam_dataloaders
 
 SIFT_DLEN = 128

@@ -1,9 +1,11 @@
 import torch.nn as nn
 
-from code.archs.cluster.net5g import ClusterNet5gTrunk
-from code.archs.cluster.net6c import ClusterNet6c, ClusterNet6cTrunk
-from code.archs.cluster.residual import BasicBlock, ResNet
-from code.archs.cluster.vgg import VGGNet
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .archs.cluster.net5g import ClusterNet5gTrunk
+from .archs.cluster.net6c import ClusterNet6c, ClusterNet6cTrunk
+from .archs.cluster.residual import BasicBlock, ResNet
+from .archs.cluster.vgg import VGGNet
 
 __all__ = ["TripletsNet5g", "TripletsNet6c"]
 

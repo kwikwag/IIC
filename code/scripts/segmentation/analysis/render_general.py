@@ -7,14 +7,16 @@ from datetime import datetime
 import numpy as np
 import torch
 
-import code.archs as archs
-from code.utils.cluster.cluster_eval import \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .utils.cluster.cluster_eval import \
   _get_assignment_data_matches
-from code.utils.cluster.transforms import sobel_process
-from code.utils.segmentation.data import make_Coco_dataloaders, \
+from .utils.cluster.transforms import sobel_process
+from .utils.segmentation.data import make_Coco_dataloaders, \
   make_Potsdam_dataloaders
-from code.utils.segmentation.render import render
-from code.utils.segmentation.segmentation_eval import \
+from .utils.segmentation.render import render
+from .utils.segmentation.segmentation_eval import \
   _segmentation_get_data, segmentation_eval
 
 # Render images for segmentation models

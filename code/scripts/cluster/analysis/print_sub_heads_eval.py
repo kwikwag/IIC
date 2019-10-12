@@ -3,9 +3,11 @@ import os
 import pickle
 import torch
 
-import code.archs as archs
-from code.utils.cluster.cluster_eval import get_subhead_using_loss
-from code.utils.cluster.data import cluster_twohead_create_dataloaders
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .utils.cluster.cluster_eval import get_subhead_using_loss
+from .utils.cluster.data import cluster_twohead_create_dataloaders
 
 def main():
   parser = argparse.ArgumentParser()

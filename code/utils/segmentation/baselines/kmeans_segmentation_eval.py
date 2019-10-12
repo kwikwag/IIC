@@ -5,8 +5,10 @@ import numpy as np
 import torch
 from sklearn.cluster import MiniBatchKMeans
 
-from code.utils.cluster.eval_metrics import _hungarian_match, _acc, _nmi, _ari
-from code.utils.cluster.transforms import sobel_process
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .utils.cluster.eval_metrics import _hungarian_match, _acc, _nmi, _ari
+from .utils.cluster.transforms import sobel_process
 
 GET_NMI_ARI = False
 

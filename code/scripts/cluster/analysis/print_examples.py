@@ -7,9 +7,11 @@ import numpy as np
 import torch
 from PIL import Image
 
-import code.archs as archs
-from code.utils.cluster.data import cluster_twohead_create_dataloaders
-from code.utils.cluster.transforms import sobel_process
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .utils.cluster.data import cluster_twohead_create_dataloaders
+from .utils.cluster.transforms import sobel_process
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_ind", type=int, required=True)

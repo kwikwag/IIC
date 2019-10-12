@@ -11,11 +11,13 @@ import torch
 matplotlib.use('Agg')
 import os
 
-import code.archs as archs
-from code.utils.cluster.general import nice
-from code.utils.segmentation.segmentation_eval import \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .utils.cluster.general import nice
+from .utils.segmentation.segmentation_eval import \
   segmentation_eval
-from code.utils.segmentation.data import segmentation_create_dataloaders
+from .utils.segmentation.data import segmentation_create_dataloaders
 
 # Clone any old model (from config and best_net) and re-evaluate, including
 # finding 1-1 mapping from output channels to ground truth clusters.

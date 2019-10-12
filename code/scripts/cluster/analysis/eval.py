@@ -4,9 +4,11 @@ import pickle
 
 import torch
 
-import code.archs as archs
-from code.utils.cluster.cluster_eval import cluster_eval
-from code.utils.cluster.data import cluster_twohead_create_dataloaders
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+import .archs as archs
+from .utils.cluster.cluster_eval import cluster_eval
+from .utils.cluster.data import cluster_twohead_create_dataloaders
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_ind", type=int, required=True)

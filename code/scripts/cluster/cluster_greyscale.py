@@ -14,12 +14,14 @@ import torch
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-import code.archs as archs
-from code.utils.cluster.general import config_to_str, get_opt, \
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from . import archs as archs
+from .utils.cluster.general import config_to_str, get_opt, \
   update_lr, nice
-from code.utils.cluster.cluster_eval import cluster_eval
-from code.utils.cluster.data import cluster_create_dataloaders
-from code.utils.cluster.IID_losses import IID_loss
+from .utils.cluster.cluster_eval import cluster_eval
+from .utils.cluster.data import cluster_create_dataloaders
+from .utils.cluster.IID_losses import IID_loss
 
 """
   Semisupervised overclustering ("IIC+" = "IID+")

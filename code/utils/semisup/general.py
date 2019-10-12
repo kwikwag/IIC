@@ -3,7 +3,9 @@ import torch
 from torch import nn as nn
 from torch.autograd import Variable
 
-from code.utils.cluster.transforms import sobel_process
+from . import __base_package__ as __package__  # any following relative import will be relative to base package
+
+from .utils.cluster.transforms import sobel_process
 
 
 def get_dlen(net_features, dataloader, include_rgb=None,
